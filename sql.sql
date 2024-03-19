@@ -1,3 +1,5 @@
+/*database*/
+
 create database db_centro_cirurgico;
 use db_centro_cirurgico;
 
@@ -48,6 +50,8 @@ create table tb_agenda(
 	status_cirurgia enum('agendado', 'concluido', 'cancelado')
 );
 
+/*Views*/
+
 create view Listagem_Medico_especialidade as
 
 select  med.nome_medico , med.celular_medico, med.email_medico, pac.nome_especialidade
@@ -81,8 +85,22 @@ on d.id_paciente = a.id_paciente
 ; 
 
 
+/*Fast reset*/
+
+drop database db_centro_cirurgico;
 
 
 
-drop view SALA;
-drop database db_centro_cirurgico
+/*triggers e backups*/
+
+create table tb_paciente_back(
+	id_paciente int unsigned auto_increment primary key,
+    nome_paciente varchar(200) not null,
+    telefone_paciente char(10),
+	celular_paciente char(11) not null,
+    email_paciente varchar(200) not null,
+    nome_responsavel_paciente varchar(200) not null,
+    telefone_responsavel_paciente varchar(11) not null,
+    date_delete datetime
+);
+
