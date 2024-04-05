@@ -1,1 +1,1 @@
-NOTA: os arquivos com os nomes de sql, sql atch e sql insrt são referentes a aula de "inner join" e "views"
+NOTA: os arquivos OLD. são referentes a um codigo antigo que não está funcioanado.
